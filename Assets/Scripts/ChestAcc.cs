@@ -1,46 +1,55 @@
 using UnityEngine;
+using UnityEngine.UI;
 
-public class ChestInteraction : MonoBehaviour
+public class ChestAcc : MonoBehaviour
 {
-    [SerializeField] private GameObject chestInventory; // Arrastra el objeto ChestInventory aquí desde el inspector
-    [SerializeField] private float interactionDistance = 2f; // Distancia de interacción, en caso de usarla adicionalmente
+    [SerializeField] private GameObject chestInventory; // Chest donde se guardan los items
+    [SerializeField] private InventoryManager inventoryManager; // Referencia al InventoryManager
+    [SerializeField] private InventoryManager.InventorySlot[] chestSlots; // Slots del Chest
+    [SerializeField] public Button keepButton;  // Botón Keep para transferir los items
 
-    private bool isInventoryOpen = false; // Estado de si el inventario está abierto o cerrado
-    private bool isPlayerNear = false; // Estado que indica si el jugador está cerca del cofre
+    private bool isInventoryOpen = false;
+    private bool isPlayerNear = false;
+
+    public void Start()
+    {
+        // Asignamos la función del botón Keep cuando se presiona
+        keepButton.onClick.AddListener(OnKeepButtonPressed);
+    }
 
     private void Update()
     {
-        // Solo permite abrir o cerrar el inventario si el jugador está cerca y presiona E
-        if (isPlayerNear && Input.GetKeyDown(KeyCode.E)) 
+        if (isPlayerNear && Input.GetKeyDown(KeyCode.E))
         {
-            ToggleInventory(); // Abre o cierra el inventario
+            ToggleInventory();
         }
     }
 
-    // Cambia el estado del inventario (abierto/cerrado)
     private void ToggleInventory()
     {
-        isInventoryOpen = !isInventoryOpen; // Cambia el estado
-
-        // Activa o desactiva el ChestInventory dependiendo del estado
+        isInventoryOpen = !isInventoryOpen;
         chestInventory.SetActive(isInventoryOpen);
     }
 
-    // Detecta cuando el jugador entra en el área de colisión del cofre
+    public void OnKeepButtonPressed()
+    {
+        // Transferir los íconos de los items del inventario a los slots del Chest
+        inventoryManager.TransferItemsToChest(chestSlots);
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player")) // Verifica si el objeto que entra tiene la etiqueta "Player"
+        if (other.CompareTag("Player"))
         {
-            isPlayerNear = true; // El jugador está cerca del cofre
+            isPlayerNear = true;
         }
     }
 
-    // Detecta cuando el jugador sale del área de colisión del cofre
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Player")) // Verifica si el objeto que sale tiene la etiqueta "Player"
+        if (other.CompareTag("Player"))
         {
-            isPlayerNear = false; // El jugador ya no está cerca del cofre
+            isPlayerNear = false;
         }
     }
 }

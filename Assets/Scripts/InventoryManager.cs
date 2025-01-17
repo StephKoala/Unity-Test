@@ -10,7 +10,7 @@ public class InventoryManager : MonoBehaviour
         public bool isEmpty = true;  // Verifica si el slot está vacío
     }
 
-    [SerializeField] private InventorySlot[] slots;
+    [SerializeField] private InventorySlot[] slots; // Slots de Inventario
 
     public bool AddToInventory(Sprite itemIcon)
     {
@@ -26,5 +26,20 @@ public class InventoryManager : MonoBehaviour
         }
         Debug.Log("Inventario lleno");
         return false;  // Si no hay espacio, devolver falso
+    }
+
+    // Función para transferir los íconos al Chest (pasarlos de inventario a los slots del Chest)
+    public void TransferItemsToChest(InventorySlot[] chestSlots)
+    {
+        for (int i = 0; i < slots.Length; i++)
+        {
+            if (!slots[i].isEmpty && i < chestSlots.Length && chestSlots[i].isEmpty)
+            {
+                chestSlots[i].icon.sprite = slots[i].icon.sprite;  // Asigna el icono al slot del Chest
+                chestSlots[i].icon.enabled = true;  // Hacer visible el ícono en el Chest
+                slots[i].icon.enabled = false;     // Desactivar el ícono en el Inventario
+                slots[i].isEmpty = true;           // Marcar el slot del inventario como vacío
+            }
+        }
     }
 }
