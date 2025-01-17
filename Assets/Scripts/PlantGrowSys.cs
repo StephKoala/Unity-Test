@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class PlantaBase : MonoBehaviour
+public class PlantGrowSys : MonoBehaviour
 {
     [SerializeField] protected float growingtime;
     [SerializeField] protected Sprite[] phases; //Sprites for each growth phase

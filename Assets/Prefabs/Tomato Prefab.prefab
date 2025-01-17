@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 72995773600536753}
   - component: {fileID: 4351630176872741533}
   - component: {fileID: 2120182121083318379}
+  - component: {fileID: 3449570787966766969}
   m_Layer: 0
   m_Name: Tomato Prefab
   m_TagString: Untagged
@@ -97,9 +98,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44a22d3b7a1ecda449ed22a3e2b4ff6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  growingtime: 7
+  growingtime: 3
   phases:
   - {fileID: -1224982084, guid: 290c8447b2228ea4388f6cffea781d2f, type: 3}
   - {fileID: -1804971462, guid: 290c8447b2228ea4388f6cffea781d2f, type: 3}
   - {fileID: 1674338280, guid: 290c8447b2228ea4388f6cffea781d2f, type: 3}
   - {fileID: 1959025367, guid: 290c8447b2228ea4388f6cffea781d2f, type: 3}
+--- !u!70 &3449570787966766969
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7950029757337943331}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.55770266, y: 1}
+  m_Direction: 0

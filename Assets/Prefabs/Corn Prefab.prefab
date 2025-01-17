@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 518259610484897376}
   - component: {fileID: 103317372604165742}
   - component: {fileID: 6007674756582420769}
+  - component: {fileID: 2791518833984416033}
   m_Layer: 0
   m_Name: Corn Prefab
   m_TagString: Untagged
@@ -97,9 +98,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44a22d3b7a1ecda449ed22a3e2b4ff6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  growingtime: 7
+  growingtime: 2
   phases:
   - {fileID: -63687027, guid: 290c8447b2228ea4388f6cffea781d2f, type: 3}
   - {fileID: 836541102, guid: 290c8447b2228ea4388f6cffea781d2f, type: 3}
   - {fileID: 1983558210, guid: 290c8447b2228ea4388f6cffea781d2f, type: 3}
   - {fileID: -1258021599, guid: 290c8447b2228ea4388f6cffea781d2f, type: 3}
+--- !u!70 &2791518833984416033
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8838721795328471528}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.00000011920929, y: 0}
+  m_Size: {x: 0.681479, y: 1}
+  m_Direction: 0
