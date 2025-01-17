@@ -3,27 +3,27 @@ using UnityEngine.UI;
 
 public class PlayerInvToChestBtt : MonoBehaviour
 {
-    [SerializeField] private InventoryManager playerInventoryManager; // Referencia al InventoryManager del jugador
-    [SerializeField] private ChestAcc chestScript; // Referencia al script del cofre
+    [SerializeField] private InventoryManager playerInventoryManager; 
+    [SerializeField] private ChestAcc chestScript; 
 
     private void Start()
     {
-        // Vincula el botón al método de transferencia
+        // Bind the button to the transfer method
         GetComponent<Button>().onClick.AddListener(TransferAllToChest);
     }
 
     public void TransferAllToChest()
     {
-        // Verifica si el jugador está cerca del cofre antes de transferir
+        // Check if the player is near the chest before transferring
         if (chestScript.IsPlayerNear())
         {
-            // Llama a la función que transfiere todos los ítems del inventario al cofre
+            // Call the function to transfer all items from the inventory to the chest
             playerInventoryManager.TransferItemsToChest(chestScript.chestSlots);
-            Debug.Log("Transferencia completada.");
+            Debug.Log("Transfer completed.");
         }
         else
         {
-            Debug.Log("No puedes transferir ítems. Necesitas estar cerca del cofre.");
+            Debug.Log("You cannot transfer items. You need to be near the chest.");
         }
     }
 }

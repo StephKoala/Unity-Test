@@ -4,10 +4,10 @@ using UnityEngine;
 public class PlantGrowSys : MonoBehaviour
 {
     [SerializeField] protected float growingtime;
-    [SerializeField] protected Sprite[] phases; // Sprites para cada fase de crecimiento
-    [SerializeField] private Sprite harvestedIcon;  // Ícono que representa la planta cosechada
+    [SerializeField] protected Sprite[] phases; 
+    [SerializeField] private Sprite harvestedIcon;  
 
-    protected int currentPhase = 0;  // Fase actual de la planta
+    protected int currentPhase = 0; 
     private SpriteRenderer spriteRenderer;
 
     private void Start()
@@ -18,9 +18,9 @@ public class PlantGrowSys : MonoBehaviour
 
     private IEnumerator Growing()
     {
-        while (currentPhase < phases.Length - 1)  // Mientras no esté en la fase de cosecha
+        while (currentPhase < phases.Length - 1)  // While not in the harvest phase
         {
-            yield return new WaitForSeconds(growingtime);  // Esperar entre fases
+            yield return new WaitForSeconds(growingtime);  // Wait between phases
             SwitchPhase();
         }
     }
@@ -28,22 +28,22 @@ public class PlantGrowSys : MonoBehaviour
     private void SwitchPhase()
     {
         currentPhase++;
-        spriteRenderer.sprite = phases[currentPhase];  // Cambiar al sprite correspondiente
+        spriteRenderer.sprite = phases[currentPhase];  // Change to the corresponding sprite
     }
 
     public bool Harvest(InventoryManager inventory)
     {
-        if (currentPhase == phases.Length - 1)  // Si está en la fase de cosecha
+        if (currentPhase == phases.Length - 1)  // If it's in the harvest phase
         {
-            if (inventory.AddToInventory(harvestedIcon))  // Intentar agregar al inventario
+            if (inventory.AddToInventory(harvestedIcon))  // Try to add to the inventory
             {
-                spriteRenderer.sprite = phases[0];  // Reiniciar la planta
+                spriteRenderer.sprite = phases[0];  // Reset the plant
                 currentPhase = 0;
-                Invoke("ResetGrowth", 2f);  // Reiniciar el crecimiento después de 5 segundos
+                Invoke("ResetGrowth", 2f);  // Reset growth after 2 seconds
                 return true;
             }
         }
-        return false;  // No se pudo cosechar (por ejemplo, inventario lleno)
+        return false;  // Cannot harvest (e.g., inventory full)
     }
 
     private void ResetGrowth()
@@ -53,6 +53,6 @@ public class PlantGrowSys : MonoBehaviour
 
     public bool ItsHarvested()
     {
-        return currentPhase == phases.Length - 1;  // Verificar si está lista para cosechar
+        return currentPhase == phases.Length - 1;  // Check if it's ready for harvesting
     }
 }

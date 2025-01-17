@@ -2,25 +2,25 @@ using UnityEngine;
 
 public class ToggleInventory : MonoBehaviour
 {
-    [SerializeField] private GameObject inventory;  // El GameObject que contiene el inventario
+    [SerializeField] private GameObject inventory;  // The GameObject that contains the inventory
 
-    private bool isInventoryOpen = false;  // Estado que indica si el inventario está abierto o cerrado
+    private bool isInventoryOpen = false;  // State that indicates whether the inventory is open or closed
 
     void Update()
     {
-        // Detecta cuando se presiona la tecla B
+        // Detects when the B key is pressed
         if (Input.GetKeyDown(KeyCode.B))
         {
-            ToggleInventoryVisibility();  // Llama a la función para alternar la visibilidad
+            ToggleInventoryVisibility();  // Calls the function to toggle visibility
         }
     }
 
-    // Alterna la visibilidad del inventario
+    // Toggles the visibility of the inventory
     private void ToggleInventoryVisibility()
     {
-        isInventoryOpen = !isInventoryOpen;  // Cambia el estado del inventario
+        isInventoryOpen = !isInventoryOpen;  // Changes the inventory state
 
-        // Activa o desactiva el GameObject basado en el estado
+        // Activates or deactivates the GameObject based on the state
         inventory.SetActive(isInventoryOpen);
     }
 }
