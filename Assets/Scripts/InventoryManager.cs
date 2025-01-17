@@ -28,17 +28,26 @@ public class InventoryManager : MonoBehaviour
         return false;  // Si no hay espacio, devolver falso
     }
 
-    // Función para transferir los íconos al Chest (pasarlos de inventario a los slots del Chest)
+    // Función para transferir los íconos al Chest
     public void TransferItemsToChest(InventorySlot[] chestSlots)
     {
-        for (int i = 0; i < slots.Length; i++)
+        foreach (InventorySlot playerSlot in slots)
         {
-            if (!slots[i].isEmpty && i < chestSlots.Length && chestSlots[i].isEmpty)
+            if (!playerSlot.isEmpty) // Si el slot del jugador no está vacío
             {
-                chestSlots[i].icon.sprite = slots[i].icon.sprite;  // Asigna el icono al slot del Chest
-                chestSlots[i].icon.enabled = true;  // Hacer visible el ícono en el Chest
-                slots[i].icon.enabled = false;     // Desactivar el ícono en el Inventario
-                slots[i].isEmpty = true;           // Marcar el slot del inventario como vacío
+                foreach (InventorySlot chestSlot in chestSlots)
+                {
+                    if (chestSlot.isEmpty) // Encuentra el primer slot vacío en el cofre
+                    {
+                        chestSlot.icon.sprite = playerSlot.icon.sprite;  // Asigna el icono al slot del Chest
+                        chestSlot.icon.enabled = true;                   // Hacer visible el ícono en el Chest
+                        chestSlot.isEmpty = false;                       // Marcar el slot del cofre como ocupado
+
+                        playerSlot.icon.enabled = false;                 // Desactivar el ícono en el Inventario
+                        playerSlot.isEmpty = true;                       // Marcar el slot del jugador como vacío
+                        break; // Deja de buscar slots en el cofre para este ítem
+                    }
+                }
             }
         }
     }

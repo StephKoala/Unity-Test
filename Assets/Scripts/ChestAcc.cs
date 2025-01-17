@@ -1,21 +1,13 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public class ChestAcc : MonoBehaviour
 {
     [SerializeField] private GameObject chestInventory; // Chest donde se guardan los items
     [SerializeField] private InventoryManager inventoryManager; // Referencia al InventoryManager
-    [SerializeField] private InventoryManager.InventorySlot[] chestSlots; // Slots del Chest
-    [SerializeField] public Button keepButton;  // Botón Keep para transferir los items
+    [SerializeField] public InventoryManager.InventorySlot[] chestSlots; // Slots del Chest
 
     private bool isInventoryOpen = false;
     private bool isPlayerNear = false;
-
-    public void Start()
-    {
-        // Asignamos la función del botón Keep cuando se presiona
-        keepButton.onClick.AddListener(OnKeepButtonPressed);
-    }
 
     private void Update()
     {
@@ -29,12 +21,6 @@ public class ChestAcc : MonoBehaviour
     {
         isInventoryOpen = !isInventoryOpen;
         chestInventory.SetActive(isInventoryOpen);
-    }
-
-    public void OnKeepButtonPressed()
-    {
-        // Transferir los íconos de los items del inventario a los slots del Chest
-        inventoryManager.TransferItemsToChest(chestSlots);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -51,5 +37,11 @@ public class ChestAcc : MonoBehaviour
         {
             isPlayerNear = false;
         }
+    }
+
+    // Método público para verificar si el jugador está cerca del cofre
+    public bool IsPlayerNear()
+    {
+        return isPlayerNear;
     }
 }

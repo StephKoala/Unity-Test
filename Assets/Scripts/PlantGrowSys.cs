@@ -39,7 +39,7 @@ public class PlantGrowSys : MonoBehaviour
             {
                 spriteRenderer.sprite = phases[0];  // Reiniciar la planta
                 currentPhase = 0;
-                Invoke("ResetGrowth", 5f);  // Reiniciar el crecimiento después de 5 segundos
+                Invoke("ResetGrowth", 2f);  // Reiniciar el crecimiento después de 5 segundos
                 return true;
             }
         }
