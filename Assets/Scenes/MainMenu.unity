@@ -1614,11 +1614,11 @@ Transform:
   m_GameObject: {fileID: 832972088}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.2300219, w: 0.9731855}
-  m_LocalPosition: {x: 1.49, y: 4.24, z: 0}
-  m_LocalScale: {x: 0.57574, y: 0.57574, z: 0.57574}
+  m_LocalPosition: {x: -4.722949, y: 5.358415, z: 0.14759594}
+  m_LocalScale: {x: 0.5757399, y: 0.5757399, z: 0.57574}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1343896625}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -26.597}
 --- !u!1 &843581411
 GameObject:
@@ -1829,12 +1829,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 972926320}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.122129105, w: 0.99251425}
-  m_LocalPosition: {x: 2.43, y: 2.44, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0.122129105, w: 0.99251425}
+  m_LocalPosition: {x: -3.7829487, y: 3.5584154, z: 0.14759594}
   m_LocalScale: {x: 0.87132597, y: 0.87132597, z: 0.87132597}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1343896625}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -14.03}
 --- !u!1 &987186055
 GameObject:
@@ -2203,7 +2203,7 @@ GameObject:
   - component: {fileID: 1157040803}
   - component: {fileID: 1157040802}
   m_Layer: 5
-  m_Name: Button
+  m_Name: PlayBtt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2272,7 +2272,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1157040803}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: SceneManager, Assembly-CSharp
+        m_MethodName: GoToLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1157040803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2640,12 +2652,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1267518769}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.7138405, y: 2.653693, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -6.9267893, y: 3.7721086, z: 0.14759594}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1343896625}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1302155775
 GameObject:
@@ -2724,12 +2736,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1302155775}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.2588191, w: 0.9659258}
-  m_LocalPosition: {x: -1.8831815, y: 1.514975, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: 0.2588191, w: 0.9659258}
+  m_LocalPosition: {x: -8.09613, y: 2.6333904, z: 0.14759594}
   m_LocalScale: {x: 0.6818, y: 0.6818, z: 0.6818}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1343896625}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 30}
 --- !u!1 &1319120953
 GameObject:
@@ -2808,12 +2820,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1319120953}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.9891376, y: 3.3851898, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -10.202086, y: 4.5036054, z: 0.14759594}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1343896625}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1343896624
 GameObject:
@@ -2872,6 +2884,11 @@ Transform:
   - {fileID: 541418395}
   - {fileID: 227394144}
   - {fileID: 1882041927}
+  - {fileID: 1267518771}
+  - {fileID: 972926322}
+  - {fileID: 832972090}
+  - {fileID: 1319120955}
+  - {fileID: 1302155777}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1377850623
@@ -5711,8 +5728,3 @@ SceneRoots:
   - {fileID: 1606828821}
   - {fileID: 1694355035}
   - {fileID: 1343896625}
-  - {fileID: 1267518771}
-  - {fileID: 972926322}
-  - {fileID: 832972090}
-  - {fileID: 1319120955}
-  - {fileID: 1302155777}
