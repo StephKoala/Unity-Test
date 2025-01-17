@@ -8,8 +8,8 @@ public class ToggleInventory : MonoBehaviour
 
     void Update()
     {
-        // Detecta cuando se presiona la tecla H
-        if (Input.GetKeyDown(KeyCode.H))
+        // Detecta cuando se presiona la tecla B
+        if (Input.GetKeyDown(KeyCode.B))
         {
             ToggleInventoryVisibility();  // Llama a la función para alternar la visibilidad
         }
